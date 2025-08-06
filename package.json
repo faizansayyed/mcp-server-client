@@ -5,7 +5,7 @@
   "scripts": {
     "server:dev": "tsx src/server.ts",
     "server:build": "tcs",
-    "server:build:watch": "tcs --watch",
+    "server:build:watch": "tsc --watch",
     "server:inspect": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector npm run server:dev",
     "dev": "nodemon",
     "build": "tsc",
