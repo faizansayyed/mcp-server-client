@@ -2,17 +2,18 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { getUserById } from "../../services/userService";
 
 export function registerUserDetailsResource(server: McpServer) {
+
+    // Dynamic resource with parameters
     server.registerResource(
         "user-details",
-        new ResourceTemplate("users://{id}", { list: undefined }),
+        new ResourceTemplate("users://{userId}/details", { list: undefined }),
         {
             title: "User Details",
             description: "Get user details by ID",
-            mimetype: "application/json",
+            mimetype: "application/json"
         },
-        async (uri) => {
+        async (uri, { userId }) => {
             const url = new URL(uri.href);
-            const userId = url.pathname.split('/').pop();
 
             if (!userId) {
                 throw new Error("User ID is required");
@@ -27,4 +28,5 @@ export function registerUserDetailsResource(server: McpServer) {
             };
         }
     );
+
 }

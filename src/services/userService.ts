@@ -25,9 +25,9 @@ export async function getAllUsers(): Promise<User[]> {
     return await readUserData();
 }
 
-export async function getUserById(id: string): Promise<User> {
+export async function getUserById(id: string | string[]): Promise<User> {
     const users = await readUserData();
-    const user = users.find(u => u.id === id);
+    const user = users.find(u => u.id.toString() === id.toString());
     if (!user) {
         throw new Error(`User with ID ${id} not found.`);
     }

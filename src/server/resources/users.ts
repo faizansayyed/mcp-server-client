@@ -2,9 +2,11 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { getAllUsers } from "../../services/userService";
 
 export function registerUsersResource(server: McpServer) {
+
+    // Static resource
     server.registerResource(
         "users",
-        new ResourceTemplate("users://all", { list: undefined }),
+        "users://all",
         {
             title: "Users",
             description: "get all users from data store",
