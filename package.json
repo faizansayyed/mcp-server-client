@@ -1,10 +1,10 @@
 {
   "name": "nodejs-ts-boilerplate",
   "version": "1.0.0",
-  "main": "src/server.ts",
+  "main": "src/server/server.ts",
   "scripts": {
-    "server:dev": "tsx src/server.ts",
-    "server:build": "tcs",
+    "server:dev": "tsx src/server/server.ts",
+    "server:build": "tsc",
     "server:build:watch": "tsc --watch",
     "server:inspect": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector npm run server:dev",
     "dev": "nodemon",

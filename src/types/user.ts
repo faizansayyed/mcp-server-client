@@ -1,7 +1,11 @@
-export interface User {
-    id?: string; // Optional, will be assigned when creating a new user
-    name: string;
-    email: string;
-    phone: string;
-    address: string;
-}
+import z from "zod";
+
+export const UserSchema = z.object({
+    id: z.string(),
+    name: z.string(),
+    email: z.string().email(),
+    phone: z.string(),
+    address: z.string()
+});
+
+export type User = z.infer<typeof UserSchema>;
