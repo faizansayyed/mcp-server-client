@@ -7,6 +7,7 @@
     "server:build": "tsc",
     "server:build:watch": "tsc --watch",
     "server:inspect": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector npm run server:dev",
+    "client:dev": "tsx src/client/client.ts",
     "dev": "nodemon",
     "build": "tsc",
     "lint": "eslint . --ext .ts",
@@ -27,7 +28,10 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
+    "@ai-sdk/google": "^2.0.3",
+    "@inquirer/prompts": "^7.8.0",
     "@modelcontextprotocol/sdk": "^1.17.1",
+    "ai": "^5.0.8",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "zod": "^3.25.76"
